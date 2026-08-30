@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-[#0a0a0a] text-white;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-[#0a0a0a];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-[#0a6b7a]/40 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#0a6b7a]/60;
+  }
+
+  ::selection {
+    @apply bg-[#00d4ff]/30 text-white;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply px-6 py-2.5 bg-[#00d4ff] text-black font-semibold rounded-lg hover:bg-[#00b8d4] transition-all transform hover:scale-105 shadow-lg shadow-[#00d4ff]/20;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-2.5 bg-[#0a6b7a]/20 text-[#00d4ff] font-semibold rounded-lg hover:bg-[#0a6b7a]/30 transition-all border border-[#0a6b7a]/30;
+  }
+
+  .btn-danger {
+    @apply px-6 py-2.5 bg-red-500/10 text-red-400 font-semibold rounded-lg hover:bg-red-500/20 transition-all border border-red-500/20;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-[#141414] rounded-xl border border-[#0a6b7a]/20 p-6;
+  }
+
+  /* Inputs */
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-black/30 border border-[#0a6b7a]/20 rounded-lg focus:ring-2 focus:ring-[#00d4ff] focus:border-transparent text-white placeholder-gray-500 outline-none transition;
+  }
+
+  .input-label {
+    @apply block text-sm font-medium text-gray-300 mb-1.5;
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseSlow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  /* Gradients */
+  .gradient-primary {
+    @apply bg-gradient-to-r from-[#0a6b7a] to-[#00d4ff];
+  }
+
+  .gradient-card {
+    @apply bg-gradient-to-br from-[#141414] to-[#1a1a1a];
+  }
+
+  .gradient-border {
+    @apply border border-[#0a6b7a]/20;
+  }
+}
